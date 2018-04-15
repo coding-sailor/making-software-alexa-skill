@@ -1,0 +1,106 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "making software",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "Info",
+                    "slots": [],
+                    "samples": [
+                        "tell me about it",
+                        "what is making software",
+                        "what is it"
+                    ]
+                },
+                {
+                    "name": "Agenda",
+                    "slots": [
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME"
+                        }
+                    ],
+                    "samples": [
+                        "What is happening {time}",
+                        "What's {time}"
+                    ]
+                },
+                {
+                    "name": "Order",
+                    "slots": [
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "order {number} beers",
+                                "{number} beers",
+                                "{number}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "bring me {number} beers",
+                        "give me a beer",
+                        "order me a beer",
+                        "bring me a beer"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "Order",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.375580307472"
+                    },
+                    "slots": [
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.375580307472.1162260725288"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Confirm.Intent.375580307472",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure you want to order {number} beer?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.375580307472.1162260725288",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How many beers you want to order?"
+                    }
+                ]
+            }
+        ]
+    }
+}
