@@ -1,4 +1,5 @@
-# Making Software Alexa Skill Example
+# Making Software Alexa Skill
+This is an Alexa Skill example from Making Software Developers' Meetup
 
 ## Links
 Alexa Skills Kit: https://developer.amazon.com/alexa
